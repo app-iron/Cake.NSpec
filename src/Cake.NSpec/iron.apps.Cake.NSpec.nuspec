@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package >
+	<metadata>
+		<id>iron.apps.Cake.NSpec</id>
+		<version>0.1.0</version>
+		<title>NSpec Runner for Cake</title>
+		<authors>Dave Boden</authors>
+		<owners>app-iron.net</owners>
+		<licenseUrl>https://raw.githubusercontent.com/app-iron/Cake.NSpec/master/LICENSE</licenseUrl>
+		<projectUrl>https://github.com/app-iron/Cake.NSpec/tree/master</projectUrl>
+		<iconUrl>http://nspec.org/images/logo.png</iconUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>Cake Adapter that enables nspec tests</description>
+		<releaseNotes></releaseNotes>
+		<copyright>Copyright 2016</copyright>
+		<tags>nspec cake bdd tdd testing</tags>
+		<dependencies>
+			<dependency id="nspec" version="[1.0.0,1.1)" />
+		</dependencies>
+	</metadata>
+	<files>
+		<file src="bin/Release/iron.app.Cake.NSpec.dll" target="lib/net45"/>
+	</files>
+</package>
