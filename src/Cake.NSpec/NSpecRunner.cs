@@ -26,13 +26,17 @@ namespace iron.apps.Cake.NSpec
 				throw new ArgumentNullException (nameof (context));
 			}
 
-			var formatter = FindFormatter (null, null);
-
+			var formatter = new ConsoleFormatter ();
 			var assemblies = context.Globber.GetFiles (pattern).ToArray ();
 
 			if (assemblies.Length == 0) {
-				context.Log.Verbose ("The provided pattern did not match any files.");
+				context.Log.Warning ($"nspec: The provided pattern did not match any files. ({pattern})");
 				return;
+			} else {
+				foreach (var asm in assemblies) {
+					context.Log.Information ($"nspec: {asm.GetFilename ()}");
+					context.Log.Verbose ($"nspec: {asm}");
+				}
 			}
 
 			foreach (var asm in assemblies) {
@@ -48,30 +52,6 @@ namespace iron.apps.Cake.NSpec
 
 		}
 
-		private static IFormatter FindFormatter (string formatterClassName, IDictionary<string, string> formatterOptions)
-		{
-			// Default formatter is the standard console formatter
-			if (string.IsNullOrEmpty (formatterClassName)) {
-				var consoleFormatter = new ConsoleFormatter ();
-				consoleFormatter.Options = formatterOptions;
-				return consoleFormatter;
-			}
 
-			var nspecAssembly = typeof (IFormatter).GetTypeInfo ().Assembly;
-
-			// Look for a class that implements IFormatter with the provided name
-			var formatterType = nspecAssembly.GetTypes ().FirstOrDefault (type =>
-				  (type.Name.ToLowerInvariant () == formatterClassName)
-				  && typeof (IFormatter).IsAssignableFrom (type));
-
-			if (formatterType != null) {
-				var formatter = (IFormatter)Activator.CreateInstance (formatterType);
-				formatter.Options = formatterOptions;
-				return formatter;
-			} else {
-				throw new TypeLoadException ("Could not find formatter type " + formatterClassName);
-
-			}
-		}
 	}
 }

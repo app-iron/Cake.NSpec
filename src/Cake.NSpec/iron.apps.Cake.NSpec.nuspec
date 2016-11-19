@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>iron.apps.Cake.NSpec</id>
-		<version>0.1.0</version>
+		<version>0.1.3</version>
 		<title>NSpec Runner for Cake</title>
 		<authors>Dave Boden</authors>
 		<owners>app-iron.net</owners>
@@ -11,14 +11,14 @@
 		<iconUrl>http://nspec.org/images/logo.png</iconUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>Cake Adapter that enables nspec tests</description>
-		<releaseNotes></releaseNotes>
+		<releaseNotes>fixed missing depdencies and added minimal logging</releaseNotes>
 		<copyright>Copyright 2016</copyright>
 		<tags>nspec cake bdd tdd testing</tags>
-		<dependencies>
-			<dependency id="nspec" version="[1.0.0,1.1)" />
-		</dependencies>
+		<developmentDependency>true</developmentDependency>
 	</metadata>
 	<files>
+		<file src="bin/Release/NSpec.dll" target="lib/net45"/>
+		<file src="bin/Release/nunit.framework.dll" target="lib/net45"/>
 		<file src="bin/Release/iron.app.Cake.NSpec.dll" target="lib/net45"/>
 	</files>
 </package>
