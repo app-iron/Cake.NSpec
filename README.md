@@ -7,9 +7,10 @@ See [nspec](http://nspec.org/) and [Cake](http://cakebuild.net).
 
 ```csharp
 #addin nuget:?package=iron.apps.Cake.NSpec
+var configuration = Argument("configuration", "Release");
 ...
 Task("NSpec").Does(() => {
-  NSpec("./src/**/bin/" + configuration + "/*.nspec.dll");
+  NSpec("./src/test/**/bin/" + configuration + "/*.dll");
  });
 
 ```
