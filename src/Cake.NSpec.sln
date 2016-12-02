@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.nspec", "Example.ns
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleTwo", "ExampleTwo\ExampleTwo.csproj", "{D4545153-7393-4261-9990-A04A54E19177}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.NSpec.Runner", "Cake.NSpec.Runner\Cake.NSpec.Runner.csproj", "{3F9C0976-DE46-4431-B7F4-C6E441D0285F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,5 +41,9 @@ Global
 		{D4545153-7393-4261-9990-A04A54E19177}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4545153-7393-4261-9990-A04A54E19177}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4545153-7393-4261-9990-A04A54E19177}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F9C0976-DE46-4431-B7F4-C6E441D0285F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F9C0976-DE46-4431-B7F4-C6E441D0285F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F9C0976-DE46-4431-B7F4-C6E441D0285F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F9C0976-DE46-4431-B7F4-C6E441D0285F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

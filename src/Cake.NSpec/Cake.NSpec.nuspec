@@ -2,13 +2,13 @@
 <package >
 	<metadata>
 		<id>Cake.NSpec</id>
-		<version>0.2.0</version>
+		<version>0.2.1</version>
 		<title>NSpec Runner for Cake</title>
 		<authors>Dave Boden</authors>
 		<owners>app-iron.net, cakebuild.net</owners>
 		<licenseUrl>https://raw.githubusercontent.com/app-iron/Cake.NSpec/master/LICENSE</licenseUrl>
 		<projectUrl>https://github.com/app-iron/Cake.NSpec/tree/master</projectUrl>
-		<iconUrl>http://nspec.org/images/logo.png</iconUrl>
+		<iconUrl>https://github.com/app-iron/Cake.NSpec/blob/v0.2.0/media/cake.nspec.png</iconUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>Cake Adapter that enables nspec tests</description>
 		<releaseNotes>First Release</releaseNotes>
@@ -18,5 +18,6 @@
 	</metadata>
 	<files>
 		<file src="bin/Release/*.dll" target="lib/net45"/>
+		<file src="bin/Release/*.exe" target="lib/net45"/>
 	</files>
 </package>

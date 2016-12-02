@@ -1,4 +1,4 @@
-#r Cake.NSpec.exe
+#r Cake.NSpec.dll
 
 Task("Default").Does(() => {
 	NSpec("./*.example.dll");

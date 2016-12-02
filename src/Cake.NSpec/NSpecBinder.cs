@@ -39,7 +39,7 @@ namespace Cake.NSpec
 			}
 			else
 			{
-				var proc = typeof(NSpecBinder).Assembly.GetName().Name + ".exe";
+				var proc = typeof(Runner).Assembly.GetName().Name + ".exe";
 
 				var procArgs = "";
 
