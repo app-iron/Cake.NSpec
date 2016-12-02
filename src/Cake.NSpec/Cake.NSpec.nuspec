@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>Cake.NSpec</id>
-		<version>0.2.2</version>
+		<version>0.2.3</version>
 		<title>NSpec Runner for Cake</title>
 		<authors>Dave Boden</authors>
 		<owners>app-iron.net, cakebuild.net</owners>

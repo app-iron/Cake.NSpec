@@ -9,6 +9,7 @@ using System.Linq;
 using NSpec.Domain.Formatters;
 using System.Collections.Generic;
 using System.Reflection;
+using Cake.Common.Diagnostics;
 
 namespace Cake.NSpec
 {
@@ -31,7 +32,7 @@ namespace Cake.NSpec
 			var cakeNSpec = System.IO.Path.GetDirectoryName(
 				new System.Uri(typeof(NSpecBinder).Assembly.CodeBase).LocalPath
 			);
-
+			context.Debug($"nspec: setting working directory {cakeNSpec}");
 			if (assemblies.Length == 0)
 			{
 				context.Log.Warning($"nspec: The provided pattern did not match any files. ({pattern})");
@@ -52,13 +53,12 @@ namespace Cake.NSpec
 				foreach (var asm in assemblies)
 				{
 					var fileName = asm.GetFilename();
+					var localProcArgs = procArgs + System.IO.Path.Combine( asm.GetDirectory().FullPath , fileName.FullPath);
+					localProcArgs += " -f console";
 
-					context.Log.Information($"nspec: Found Assembly {fileName}");
-					context.Log.Information(proc);
-
-					var localProcArgs = procArgs + fileName.FullPath + " -f console";
-
-					context.Log.Verbose($"nspec: Starting {proc} {localProcArgs}");
+					context.Log.Information($"Testing Spec {fileName.FullPath}");
+					context.Log.Debug($"nspec: Found Assembly {asm.GetDirectory().FullPath}/{fileName.FullPath}");
+					context.Log.Debug($"nspec: Starting {proc} {localProcArgs}");
 
 					var proccess = context.ProcessRunner.Start(proc, new ProcessSettings
 					{
@@ -74,9 +74,8 @@ namespace Cake.NSpec
 					}
 					else
 					{
-						context.Log.Information($"{fileName} passed.");
+						context.Log.Debug($"{fileName} passed.");
 					}
-
 				}
 			}
 		}
