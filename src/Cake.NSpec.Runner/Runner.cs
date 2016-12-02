@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Cake.Core;
 using Mono.Options;
 using NSpec.Domain;
 using NSpec.Domain.Formatters;
@@ -58,7 +57,7 @@ namespace Cake.NSpec
 
 					if (failes.Any())
 					{
-						throw new CakeException($"NSpec run of {asm} reported Failures");
+						throw new Exception($"NSpec run of {asm} reported Failures");
 					}
 				}
 
