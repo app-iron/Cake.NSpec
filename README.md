@@ -1,4 +1,4 @@
-# iron.apps.Cake.NSpec
+# Cake.NSpec
 This is a Cakebuild addin for nspec
 See [nspec](http://nspec.org/) and [Cake](http://cakebuild.net).
 
