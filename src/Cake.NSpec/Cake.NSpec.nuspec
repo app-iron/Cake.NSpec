@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>Cake.NSpec</id>
-		<version>0.2.3</version>
+		<version>0.2.4</version>
 		<title>NSpec Runner for Cake</title>
 		<authors>Dave Boden</authors>
 		<owners>app-iron.net, cakebuild.net</owners>
@@ -11,7 +11,7 @@
 		<iconUrl>https://github.com/app-iron/Cake.NSpec/blob/v0.2.0/media/cake.nspec.png</iconUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>Cake Adapter that enables nspec tests</description>
-		<releaseNotes> </releaseNotes>
+		<releaseNotes></releaseNotes>
 		<copyright>Copyright 2016</copyright>
 		<tags>nspec cake bdd tdd testing</tags>
 		<developmentDependency>true</developmentDependency>
